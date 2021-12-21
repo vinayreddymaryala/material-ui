@@ -1,0 +1,47 @@
+/*
+Name: 			theme-layout.css
+Written by: 	Mamatha D M
+Version: 		1.0
+*/
+
+@media only screen and (min-width: 1020px) {
+	.bottom__link{
+		padding-top:100px;
+	}
+	.carousel-indicators{
+		bottom:-30%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	
+}
+
+@media only screen and (min-width: 1300px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+	.bottom__link{
+		padding-top:190px;
+	}
+}
+
+@media screen and (min-width: 1500px){
+
+}
+
+@media only screen and (min-width: 1600px) {
+	.carousel-indicators{
+		bottom:-40%;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+
+}
+@media only screen and (min-width: 1800px) {
+	.carousel-indicators{
+		bottom:-45%;
+	}
+}
