@@ -1,109 +1,86 @@
 import React from 'react'
-import Printwhite from '../assets/images/print-white.png'
-import Shareicon from '../assets/images/shareicon.png'
-
-
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import TabUnstyled from '@mui/base/TabUnstyled';
+import {Typography,Button,Box,Grid,Card,CardContent,Chip } from '@mui/material'
+import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop' 
+import SendIcon from '@mui/icons-material/Send';
+import { margin } from '@mui/system'
+import { makeStyles } from '@mui/styles';
+const useStyles = makeStyles({
+  root: {
+    border: 'none',
+    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64)), #EDEFF1'
+  },
+  btn:{
+    padding: '8px 16px',
+color: '#fff',
+backgroundColor: '#0A56A3',
+fontWeight: 800,
+fontSize: 14,
+lineHeight: 16,
+borderRadius: 25,
+textTransform: 'capitalize',
+justifyContent: 'center'
+}
+})
 function Resultitself(){
+    const classes=useStyles()
     return(
-        <div>
+       
+         <>
+<Grid container>
 
-    <div className='white_bckgrnd'>
-        <div className='cb_box pb-xlg'>
-            <div className='row pt-lg'>
-                <div className='col-lg-6 col-md-6'></div>
-                <div className='col-lg-6 col-md-6'>
-                    <div className='float-right'>
-                        <button type='button' className='btn btn__print_blue mr-sm'> 
-                            <span className='pr-sm'><img src={Printwhite}/></span>PRINT</button>
-                        <button type='button' className='btn btn__print_blue ml-sm'>
-                            <span className='pr-sm'><img src={Shareicon}/></span>SHARE</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div className='text-center'>
-<div className='font33 extra_bold'>Individual Result Title <span className='badge-aqua bAquarad_sm font12'>Complete</span>
-   <div className='text-center result_descrip_box'>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-   </div> 
+    <Grid item md={12}>
+        <Card>
+            <CardContent>
+<Box component="span" className={classes.btn}>
+<Button  startIcon={<LocalPrintshopIcon />}>
+                                    PRINT </Button>
+                                    </Box> 
 
-</div>
-            </div>
+                                    <Box component="span"  className={classes.btn}>
+                                    <Button  startIcon={<SendIcon />}>
+                                    SHARE</Button>
+                                    </Box>
+                                    <Typography variant='h5' component="div">Individual Result Title  </Typography>
+                                   
+                                    </CardContent>
+                                    </Card>  
+                                    </Grid>  
+                                    </Grid>      
+ 
+     {/* tabs */}
+     <TabsUnstyled defaultValue={0} className='tabs'>
+      <TabsListUnstyled >
+        <TabUnstyled className={classes.root}><label>Overview
+        </label></TabUnstyled>
+        <TabUnstyled className={classes.root}><label>Details</label></TabUnstyled>
+        <TabUnstyled className={classes.root}><label>Frequently asked qstn
+        </label></TabUnstyled>
+       
+      </TabsListUnstyled>
+      <TabPanelUnstyled value={0}> 
+      <Typography variant='h1'>first content</Typography>
+      Lorem ipsum dolor sit 
+      amet consectetur, adipisicing elit. Cupiditate quis nesciunt reprehenderit enim magnam voluptatem est id provident aliquid totam, rem minus delectus libero.
+       Odit atque exercitationem saepe doloremque quaerat. </TabPanelUnstyled>
+      <TabPanelUnstyled value={1}>
+          <Typography variant='h1'>Second content</Typography>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque necessitatibus, ducimus quasi aliquam modi nemo neque, officia quisquam sunt consequatur
+           iure. Quidem rem tempore cum fugiat harum, modi totam ipsum?
+      </TabPanelUnstyled>
+      <TabPanelUnstyled value={2}>
+      <Typography variant='h1'> Third content</Typography>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perspiciatis, repudiandae quae nostrum earum odit. Voluptate, inventore enim eos dolorum modi, laboriosam, dignissimos 
+      perspiciatis eligendi vero iure voluptates laudantium odit.
+          </TabPanelUnstyled>
+    </TabsUnstyled>
 
-        </div>
-    </div>
-    
-  <div className='white_bckgrnd'>
-   
-    <div className='cb_box'>
-        <div className='tabs'>
-            <input type='radio' name='tabs' id='tabone' />
-            <label htmlFor='tabone'>Overview</label>
-            <div className='tab p-0'>
-            
-                <div className='white_bckgrnd'>
-                    
-            <div className='clearfix'></div>
-            <div className='clearfix'></div>
-            <div className='clearfix'></div>
-            <div className='pt-xl'>
-                <div className='result_overviw_box'>
-                    <div className='font33'>Katherine, lorem  <span className='badge-aqua bAquarad extra_bold'>ipsum dolor </span>      sit amet, consectetur adipiscing elit
-  
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div className='inLineDivs'>
-                        <div>
-                            <div className='progress progressBar'>
-                                <div className='progress-bar' role='progressbar' style={{width:'40',backgroundColor:'#E35141',border:'2px solid rgb(227, 81, 65)'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}></div>
-                              </div>
-                        </div>
-                        <div>
-                            <div className='progress progressBar'>
-                                <div className='progress-bar' role='progressbar' style={{width:'40',backgroundColor:'#FF9C00',border:'2px solid rgb(255, 156, 0)'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}></div>
-                              </div>
-                        </div>
-                        
-                          <div>
-                            <div className='progress progressBar'>
-                                <div className='progress-bar' role='progressbar' style={{width:'20',backgroundColor:'#00C992',border:'2px solid rgb(0, 201, 146)'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}></div>
-                              </div>
-                          </div>
-                          
-                    </div> 
-                </div>
-            </div>
-    
-            
-                
-                        
-                    </div>
-                
-                    
-                </div>
-                <input type='radio' name='tabs' id='tabtwo'/>
-                <label htmlFor='tabtwo'>Details</label>
-                <div className='tab'>
-                  <h1>Tab Two Content</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                
-                <input type='radio' name='tabs' id='tabthree'/>
-                <label htmlFor='tabthree'>Frequently asked qstn</label>
-                <div className='tab'>
-                  <h1>Tab Three Content</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              
-    
-            </div>
-            
-            
-          </div>
-  </div>
-  
-  
-        </div>
+
+        {/* tabs */}
+        </>
     )
 }
 export default Resultitself

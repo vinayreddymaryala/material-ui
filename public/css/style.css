@@ -126,6 +126,16 @@ hgroup {
   box-sizing: border-box;
 }
 
+button, a {
+  color: #000 !important;
+  text-transform: capitalize !important;
+}
+
+button:hover, a:hover {
+  background-color: unset !important;
+  /* color: #000 !important; */
+}
+
 html,
 body {
   font-family: 'Manrope', sans-serif !important;
@@ -581,13 +591,13 @@ nton {
 
 
 .btn__blue__primary {
-  background: #0A56A3;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 16px;
-  border-radius: 25px;
-  padding: 8px 16px;
+  background: #0A56A3 !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 16px !important;
+  border-radius: 25px !important;
+  padding: 8px 16px !important;
 
   text-transform: uppercase;
 }

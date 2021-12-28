@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
@@ -25,16 +26,10 @@ export default function AccountMenu() {
   };
   return (
     <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-        <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
-        <Tooltip title="Account settings">
-          <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-            <Stack color='inherit' sx={{ width: 32, height: 32 }}> truthifi<KeyboardArrowDownSharpIcon/></Stack>
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <Menu 
+      <Button onClick={handleClick} className='btn profile_dropdown dropdown-toggle' size="small" sx={{ ml: 2 }}>
+        truthifi<KeyboardArrowDownSharpIcon />
+      </Button>
+      <Menu
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

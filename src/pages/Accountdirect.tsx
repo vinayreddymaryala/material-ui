@@ -1,9 +1,24 @@
 import React from "react"
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MessageIcon from '@mui/icons-material/Message';
+import {Typography,Chip,Box,Grid,Button} from '@mui/material';
+
 import attach from '../assets/images/attach.png'
 import calc from "../assets/images/calc.png"
 import downArrow from "../assets/images/down-arrow.png"
 import printwhite from "../assets/images/print-white.png"
 function Accountdirect(){
+    //accordian........
+    const [expanded, setExpanded] = React.useState<string | false>(false);
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+     //accordian........
     return(
         <>
         <body>
@@ -38,9 +53,82 @@ function Accountdirect(){
 
         </div>
     </div>
+    <Grid container>
+        <Grid item md={12}>
+            <Typography >Showing x of xx results</Typography>
+         
+          
+<Box>
+    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+            <MessageIcon style={{paddingRight: 6}}/>Individual Result Title
+            
+  <Chip label="complete" color= 'info' variant="filled" style={{marginLeft:6}} />
+  
 
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis sed qui, accusamus dicta hic quidem ex expedita ullam voluptatem, impedit laboriosam
+            aliquid eos, mollitia quaerat asperiores harum ut ratione in.
+          </Typography>
+          <Button>Resubmit in X days</Button>
 
-   
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+            <MessageIcon style={{paddingRight: 6}}/>Individual Result Title
+            
+  
+
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
+            Aliquam eget maximus est, id dignissim quam.
+          </Typography>
+          <Button>Resubmit in X days</Button>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+            <MessageIcon style={{paddingRight: 6}}/>Individual Result Title
+            
+  
+
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
+            Aliquam eget maximus est, id dignissim quam.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      </Box>
+      </Grid>
+      </Grid>
   <div className="cb_box">
     <div className="pt-xlg pb-lg">
         
